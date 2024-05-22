@@ -1,0 +1,86 @@
+#!/usr/bin/env node
+import fs from 'fs'
+import ejs from 'ejs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { info } from './chat/index.js'
+
+import {execa} from 'execa';
+
+var root;
+var data:any = {}
+const Init = async () => {
+    let args = process.argv.slice(2);
+    if(!args[0]) {
+        info(`[ {{cyan}}NOHE{{end}} ] Write a command`)
+        return
+    }
+    root = process.cwd() + '/' + args[0]
+    var dir = await createDirectory(root)
+    if(!dir) {
+        info(`[ {{cyan}}nohedev{{end}} ] There is already a directory with that name`)
+        return
+    }
+    data = {
+        name: args[0]
+    }
+    const paths = fileURLToPath(import.meta.url)
+    const a = path.dirname(paths)
+    const ruta = path.join(a, '.');
+
+    await Folder(ruta+'/template', root)
+    try {
+        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install`;
+        info(`[ {{cyan}}info{{end}} ] Completed Installation`)
+        info(`[ {{cyan}}info{{end}} ] cd ${args[0]} and npm run dev`)
+    } catch (error) {
+        info(`[ {{red}}ERROR{{end}} ] npm install: ${error}`)
+    }
+}
+
+const Folder = (dir:string, output:string) => {
+    return new Promise((resolve:Function, reject:Function) => {
+        fs.readdir(dir, { withFileTypes: true }, async (err, files) => { 
+            if (err) 
+                reject()
+            else { 
+                files.forEach(async file => {
+                    if(file.isDirectory()) {
+                        await createDirectory(output+'/'+file.name)
+                        await Folder(dir+'/'+file.name, output+'/'+file.name)
+                    }
+    
+                    if(file.isFile()) {
+                        fs.readFile(dir+'/'+file.name, (_err, _data) => {
+                            var render
+                            if(file.name !== "index.html") {
+                                render = ejs.render(_data.toString(), data)
+                            }
+                            else
+                            {
+                                render = _data.toString()
+                            }
+                            fs.writeFile(output+'/'+file.name, render, err => {
+                                if (err) throw err;
+                            })
+                        })
+                    }
+                }) 
+                resolve()
+            } 
+        })
+    })
+}
+
+const createDirectory = (dir:string) => {
+    return new Promise((resolve:Function) => {
+        fs.mkdir(dir, function (err) {
+            if (err) {
+                resolve(false)
+            }
+            resolve(true)
+        });
+    })
+}
+
+Init()

@@ -1,0 +1,26 @@
+{
+  "name": "@cq9dev/create-nohe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "bin": {
+    "@cq9dev/create-nohe": "lib/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "CQDEV",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/execa": "^2.0.0",
+    "ejs": "^3.1.10",
+    "execa": "^9.1.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

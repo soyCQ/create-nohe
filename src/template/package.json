@@ -1,0 +1,14 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "node nohe build",
+    "dev": "node nohe server"
+  },
+  "author": "CQDEV",
+  "license": "MIT",
+  "dependencies": {
+    "@cq9dev/nohe": "^1.0.5"
+  }
+}
