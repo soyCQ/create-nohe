@@ -12,7 +12,7 @@ var data:any = {}
 const Init = async () => {
     let args = process.argv.slice(2);
     if(!args[0]) {
-        info(`[ {{cyan}}NOHE{{end}} ] Write a command`)
+        info(`[ {{cyan}}NOHE{{end}} ] Write a name "npm init @cq9dev/nohe Name"`)
         return
     }
     root = process.cwd() + '/' + args[0]
