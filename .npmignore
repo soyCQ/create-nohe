@@ -133,6 +133,4 @@ dist
 test
 src
 package-lock.json
-tsconfig.json
 jest.config.js
-.eslintrc.js

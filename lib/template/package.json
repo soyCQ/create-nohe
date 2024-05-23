@@ -10,7 +10,7 @@
   "author": "CQDEV",
   "license": "MIT",
   "dependencies": {
-    "@cq9dev/nohe": "^1.0.6",
+    "@cq9dev/nohe": "^1.0.9",
     "ts-node": "^10.9.2",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.3.0",
