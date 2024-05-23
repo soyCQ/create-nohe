@@ -25,5 +25,6 @@
   },
   "ts-node": {
     "swc": true
-  }
+  },
+  "exclude": ["src/template", "node_modules"]
 }

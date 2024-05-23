@@ -4,11 +4,19 @@
   "description": "",
   "scripts": {
     "build": "node nohe build",
-    "dev": "node nohe server"
+    "dev": "node nohe server",
+    "lint": "npx eslint ."
   },
   "author": "CQDEV",
   "license": "MIT",
   "dependencies": {
-    "@cq9dev/nohe": "^1.0.5"
+    "@cq9dev/nohe": "^1.0.6",
+    "ts-node": "^10.9.2",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.3.0",
+    "@types/node": "^20.12.12",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.10.0"
   }
 }
