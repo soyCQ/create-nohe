@@ -9,6 +9,6 @@
   "author": "CQDEV",
   "license": "MIT",
   "dependencies": {
-    "@cq9dev/nohe": "^2.0.0"
+    "@cq9dev/nohe": "^2.0.1"
   }
 }
