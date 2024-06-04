@@ -30,7 +30,7 @@ const Init = async () => {
 
     await Folder(ruta+'/template', root)
     try {
-        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install`;
+        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install @cq9dev/nohe`;
         info(`[ {{cyan}}info{{end}} ] Completed Installation`)
         info(`[ {{cyan}}info{{end}} ] cd ${args[0]} and npm run dev`)
     } catch (error) {

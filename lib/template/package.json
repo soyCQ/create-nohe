@@ -7,8 +7,5 @@
     "dev": "node nohe server"
   },
   "author": "CQDEV",
-  "license": "MIT",
-  "dependencies": {
-    "@cq9dev/nohe": "^2.0.1"
-  }
+  "license": "MIT"
 }
