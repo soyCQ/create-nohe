@@ -1,7 +1,5 @@
 <template>
-	<div>
-        NOHE TEMPLATE
-    </div>
+	<div>NOHE TEMPLATE</div>
 </template>
 
 <script setup>
