@@ -4,7 +4,6 @@ import ejs from 'ejs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { info } from './chat/index.js'
-
 import {execa} from 'execa';
 
 var root;
@@ -12,13 +11,13 @@ var data:any = {}
 const Init = async () => {
     let args = process.argv.slice(2);
     if(!args[0]) {
-        info(`[ {{cyan}}NOHE{{end}} ] Write a name "npm init @cq9dev/nohe Name"`)
+        info(`[ {{cyan}}NOHE{{end}} ] Write a name "npm init nohejs Name"`)
         return
     }
     root = process.cwd() + '/' + args[0]
     var dir = await createDirectory(root)
     if(!dir) {
-        info(`[ {{cyan}}nohedev{{end}} ] There is already a directory with that name`)
+        info(`[ {{cyan}}NOHE{{end}} ] There is already a directory with that name`)
         return
     }
     data = {
@@ -30,7 +29,7 @@ const Init = async () => {
 
     await Folder(ruta+'/template', root)
     try {
-        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install @cq9dev/nohe`;
+        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install nohejs`;
         info(`[ {{cyan}}info{{end}} ] Completed Installation`)
         info(`[ {{cyan}}info{{end}} ] cd ${args[0]} and npm run dev`)
     } catch (error) {
