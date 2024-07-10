@@ -5,6 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { info } from './chat/index.js'
 import {execa} from 'execa';
+import gitignore from './gitignore.js'
 
 var root;
 var data:any = {}
@@ -28,8 +29,14 @@ const Init = async () => {
     const ruta = path.join(a, '.');
 
     await Folder(ruta+'/template', root)
+
+    var render = ejs.render(gitignore, {})
+    fs.writeFile(root+'/.gitignore', render, err => {
+        if (err) throw err;
+    })
+    
     try {
-        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install nohejs`;
+        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install nohejs nohecli`;
         info(`[ {{cyan}}info{{end}} ] Completed Installation`)
         info(`[ {{cyan}}info{{end}} ] cd ${args[0]} and npm run dev`)
     } catch (error) {

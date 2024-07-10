@@ -2,10 +2,12 @@
   "name": "<%= name %>",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
-    "build": "node nohe build",
-    "dev": "node nohe server"
+    "dev": "nohe start",
+    "build": "nohe build",
+    "clean": "nohe clean"
   },
-  "author": "CQDEV",
-  "license": "MIT"
+  "author": "",
+  "license": "ISC"
 }
