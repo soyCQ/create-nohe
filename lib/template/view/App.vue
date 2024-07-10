@@ -1,5 +1,8 @@
 <template>
   <div>
+    <a href="/" target="_blank">
+      <img src="@/assets/nohe.png" class="logo Nohejs" alt="Nohejs logo" />
+    </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
