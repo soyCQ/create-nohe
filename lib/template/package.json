@@ -1,0 +1,13 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "nohe start",
+    "build": "nohe build",
+    "clean": "nohe clean"
+  },
+  "author": "",
+  "license": "ISC"
+}
