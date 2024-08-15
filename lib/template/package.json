@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nohe start",
     "build": "nohe build",
-    "clean": "nohe clean"
+    "clean": "nohe clean",
+    "config": "nohe config"
   },
   "author": "",
   "license": "ISC"
