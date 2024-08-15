@@ -36,7 +36,7 @@ const Init = async () => {
     })
     
     try {
-        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install nohejs nohecli`;
+        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install nohejs nohecli vue`;
         info(`[ {{cyan}}info{{end}} ] Completed Installation`)
         info(`[ {{cyan}}info{{end}} ] cd ${args[0]} and npm run dev`)
     } catch (error) {
