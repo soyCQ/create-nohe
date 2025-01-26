@@ -1,0 +1,1 @@
+print("NoheJS is running on the client side")
