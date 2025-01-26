@@ -19,6 +19,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "degit": "^2.8.4",
     "ejs": "^3.1.10",
     "execa": "^9.1.0",
     "fs": "^0.0.1-security",

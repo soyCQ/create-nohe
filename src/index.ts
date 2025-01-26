@@ -64,7 +64,7 @@ function CreateProject(name: any, framework: any) {
                 return
             }
             console.log(stdout)
-            resolve()
+            resolve(true)
         });
     })
 }
