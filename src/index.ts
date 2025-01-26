@@ -1,92 +1,71 @@
 #!/usr/bin/env node
-import fs from 'fs'
-import ejs from 'ejs'
-import path from 'path'
-import { fileURLToPath } from 'url'
-import { info } from './chat/index.js'
-import {execa} from 'execa';
-import gitignore from './gitignore.js'
+import inquirer from 'inquirer';
 
-var root;
-var data:any = {}
 const Init = async () => {
     let args = process.argv.slice(2);
-    if(!args[0]) {
-        info(`[ {{cyan}}NOHE{{end}} ] Write a name "npm init nohejs Name"`)
-        return
-    }
-    root = process.cwd() + '/' + args[0]
-    var dir = await createDirectory(root)
-    if(!dir) {
-        info(`[ {{cyan}}NOHE{{end}} ] There is already a directory with that name`)
-        return
-    }
-    data = {
-        name: args[0]
-    }
-    const paths = fileURLToPath(import.meta.url)
-    const a = path.dirname(paths)
-    const ruta = path.join(a, '.');
+    console.clear()
 
-    await Folder(ruta+'/template', root)
+    console.log(" ⚡ Welcome To NoheJS !")
+    console.log()
+    const name = await inquirer.prompt([
+        {
+            type: 'input',
+            name: 'n',
+            message: 'Project name',
+            default: 'nohe-project'
+        }
+    ])
 
-    var render = ejs.render(gitignore, {})
-    fs.writeFile(root+'/.gitignore', render, err => {
-        if (err) throw err;
-    })
-    
-    try {
-        await execa({shell: true, stdio: 'inherit'})`cd ${args[0]} && npm install nohejs nohecli vue`;
-        info(`[ {{cyan}}info{{end}} ] Completed Installation`)
-        info(`[ {{cyan}}info{{end}} ] cd ${args[0]} and npm run dev`)
-    } catch (error) {
-        info(`[ {{red}}ERROR{{end}} ] npm install: ${error}`)
-    }
+    const framework = await Framework()
+    console.clear()
+    console.log("🚀 Creating project...")
+    console.log()
+    console.log("📦 Project name: ", name.n)
+    console.log("🛠️ Framework: ", framework.f)
+    console.log()
+    console.log("📦 Creating project...")
+
+    await CreateProject(name, framework)
+    console.clear()
+    console.log()
+    console.log("🚀 Project created successfully!")
+    console.log()
+    console.log("👉 To get started:")
+    console.log()
+    console.log("cd", name.n)
+    console.log("npm install")
+    console.log("npm run dev")
+    console.log()
+    console.log("Happy coding!")
 }
 
-const Folder = (dir:string, output:string) => {
-    return new Promise((resolve:Function, reject:Function) => {
-        fs.readdir(dir, { withFileTypes: true }, async (err, files) => { 
-            if (err) 
-                reject()
-            else { 
-                files.forEach(async file => {
-                    if(file.isDirectory()) {
-                        await createDirectory(output+'/'+file.name)
-                        await Folder(dir+'/'+file.name, output+'/'+file.name)
-                    }
-    
-                    if(file.isFile()) {
-                        fs.readFile(dir+'/'+file.name, (_err, _data) => {
-                            var render
-                            if(file.name !== "index.html") {
-                                render = ejs.render(_data.toString(), data)
-                            }
-                            else
-                            {
-                                render = _data.toString()
-                            }
-                            fs.writeFile(output+'/'+file.name, render, err => {
-                                if (err) throw err;
-                            })
-                        })
-                    }
-                }) 
-                resolve()
-            } 
-        })
-    })
-}
-
-const createDirectory = (dir:string) => {
-    return new Promise((resolve:Function) => {
-        fs.mkdir(dir, function (err) {
-            if (err) {
-                resolve(false)
+function Framework():any {
+    return new Promise((resolve, reject) => {
+        inquirer.prompt([
+            {
+                type: 'list',
+                name: 'f',
+                message: 'Seleccione una opción:',
+                choices: ['Vanilla', 'Vue3', 'Vue2', 'React']
             }
-            resolve(true)
+        ]).then(answers => {
+            resolve(answers)
         });
     })
 }
 
+function CreateProject(name: any, framework: any) {
+    return new Promise((resolve, reject) => {
+        const { exec } = require('child_process');
+        let cmd = `npx degit nohe427/nohejs-template#${framework.f} ${name.n}`
+        exec(cmd, (err: any, stdout: any, stderr: any) => {
+            if (err) {
+                console.error(err)
+                return
+            }
+            console.log(stdout)
+            resolve()
+        });
+    })
+}
 Init()

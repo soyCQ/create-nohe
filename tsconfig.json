@@ -1,30 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "lib": ["ESNext"],
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "strictPropertyInitialization": true,
-    "experimentalDecorators": true,
-    "noImplicitAny": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "noImplicitThis": true,
-    "skipLibCheck": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./lib",
     "strict": true,
-    "removeComments": false,
-    "types": ["@types/node"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "sourceMap": true,
     "declaration": true,
-    "outDir": "./lib"
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true
   },
-  "ts-node": {
-    "swc": true
-  },
-  "exclude": ["src/template", "node_modules"]
+  "exclude": ["node_modules", "lib"],
+  "include": ["src"]
 }
