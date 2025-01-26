@@ -1,1 +1,0 @@
-print('NoheJS Client-side')
