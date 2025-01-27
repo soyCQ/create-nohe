@@ -7,9 +7,6 @@
     "paths": {
       "@/*": [
         "view/*"
-      ],
-      "Store/*": [
-        "store/*"
       ]
     },
     "lib": [
