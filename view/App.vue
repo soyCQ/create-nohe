@@ -1,14 +1,13 @@
 <template>
   <div>
     <a href="/" target="_blank">
-      <img src="@/assets/nohe.png" class="logo Nohejs" alt="Nohejs logo" />
+      <img src="@/assets/nohejs.png" class="logo Nohejs" alt="Nohejs logo" />
     </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <router-view></router-view>
   </div>
-  
-  <router-view></router-view>
 </template>
 
 <script>
@@ -47,6 +46,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
+  text-align: center;
   min-width: 320px;
   min-height: 100vh;
 }
