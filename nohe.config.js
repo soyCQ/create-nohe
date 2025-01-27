@@ -1,4 +1,4 @@
-import { defineConfig } from '@nohe/core'
+import { defineConfig } from '@nohejs/core'
 
 export default defineConfig({
     outputDir: './build',
