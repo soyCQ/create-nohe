@@ -1,4 +1,4 @@
-import { defineManifest } from "@nohe/core"
+import { defineManifest } from "@nohejs/core"
 
 export default defineManifest({
     "client": [],

@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-import '@nohe/core'
+import '@nohejs/core'
