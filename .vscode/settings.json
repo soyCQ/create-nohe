@@ -1,0 +1,35 @@
+{
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword.control.import.lua",
+                "settings": {
+                    "foreground": "#569CD6" // Color de las funciones
+                }
+            },
+            {
+                "scope": "keyword.control.from.lua",
+                "settings": {
+                    "foreground": "#569CD6" // Color de las funciones
+                }
+            },
+            {
+                "scope": "variable.other.lua",
+                "settings": {
+                    "foreground": "#9CDCFE" // Color de las variables
+                }
+            },
+            {
+                "scope": "string.quoted.single.lua",
+                "settings": {
+                    "foreground": "#CE9178" // Color de los strings
+                }
+            }
+        ]
+    },
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+    }
+}
