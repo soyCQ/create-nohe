@@ -102,7 +102,7 @@ function CreatePackage(name:string, framework:any) {
     if (framework == "Vue2") {
         devDependencies.push(`"@vitejs/plugin-vue2": "^2.3.1"`)
         
-        dependencies.push(`"vue": "^2.7.0-0",`)
+        dependencies.push(`"vue": "^2.7.0-0"`)
         dependencies.push(`"pinia": "^2.3.0"`)
         dependencies.push(`"vue-router": "^3.6.5"`)
     }
