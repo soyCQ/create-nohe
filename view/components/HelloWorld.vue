@@ -1,8 +1,8 @@
 <template>
-  <h1>{{ props.msg }}</h1>
+  <h1>{{ main.msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="Main.count++">count is {{ Main.count }}</button>
+    <button type="button" @click="main.count++">count is {{ main.count }}</button>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
@@ -14,15 +14,12 @@
     <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
     in your IDE for a better DX
   </p>
-  <p class="read-the-docs">Click on the Farm and Vue logos to learn more</p>
+  <p class="read-the-docs">Click on the Nohejs and Vue logos to learn more</p>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import Main from 'Store/main'
-
-const props = defineProps(['msg'])
-const count = ref(0)
+import { useMain } from '@/store'
+const main = useMain()
 </script>
 
 <style scoped>
