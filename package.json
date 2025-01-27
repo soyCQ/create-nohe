@@ -1,6 +1,6 @@
 {
   "name": "create-nohejs",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "",
   "main": "lib/index.js",
   "bin": {
@@ -13,15 +13,11 @@
   "author": "CQDEV",
   "license": "MIT",
   "devDependencies": {
-    "@types/ejs": "^3.1.5",
-    "@types/execa": "^2.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
     "degit": "^2.8.4",
-    "ejs": "^3.1.10",
-    "execa": "^9.1.0",
     "fs": "^0.0.1-security",
     "inquirer": "^12.3.2",
     "path": "^0.12.7"
