@@ -8,7 +8,7 @@ document.querySelector('#app').innerHTML = `
     <a href="/" target="_blank">
       <img src="${Nohe}" class="logo" alt="Vite logo" />
     </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
       <img src="${javascriptLogo}" class="logo vanilla" alt="Javascript logo" />
     </a>
     <h1>Farm + Javascript</h1>
