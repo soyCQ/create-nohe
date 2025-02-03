@@ -4,25 +4,25 @@
             {
                 "scope": "keyword.control.import.lua",
                 "settings": {
-                    "foreground": "#569CD6" // Color de las funciones
+                    "foreground": "#569CD6"
                 }
             },
             {
                 "scope": "keyword.control.from.lua",
                 "settings": {
-                    "foreground": "#569CD6" // Color de las funciones
+                    "foreground": "#569CD6"
                 }
             },
             {
                 "scope": "variable.other.lua",
                 "settings": {
-                    "foreground": "#9CDCFE" // Color de las variables
+                    "foreground": "#9CDCFE"
                 }
             },
             {
                 "scope": "string.quoted.single.lua",
                 "settings": {
-                    "foreground": "#CE9178" // Color de los strings
+                    "foreground": "#CE9178"
                 }
             }
         ]
