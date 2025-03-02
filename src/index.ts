@@ -121,6 +121,17 @@ function CreatePackage(name:string, framework:any) {
         dependencies.push(`"react-dom": "18"`)
     }
 
+    if (framework == "None") {
+        const file = `import { defineConfig } from '@nohejs/core'
+
+export default defineConfig({
+    outputDir: './build'
+})`
+        fs.writeFile(path.join(name, 'nohe.config.js'), file, err => {
+            if (err) throw err;
+        })
+    }
+
     const file = `{
   "name": "${name}",
   "version": "1.0.0",
