@@ -50,7 +50,7 @@ function Framework():any {
                 type: 'list',
                 name: 'f',
                 message: 'Select a framework',
-                choices: ['Vanilla', 'Vue3', 'Vue2', 'React']
+                choices: ['None', 'Vanilla', 'Vue3', 'Vue2', 'React']
             }
         ]).then(answers => {
             resolve(answers)
