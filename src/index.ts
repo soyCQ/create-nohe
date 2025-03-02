@@ -73,6 +73,11 @@ function CreateProject(name: any) {
 }
 function CreateFramework(name: any, framework: any) {
     return new Promise((resolve, reject) => {
+        if (framework == "None") {
+            resolve(true)
+            return
+        }
+        
         const { exec } = require('child_process');
         let cmd = `npx degit cq9dev/create-nohe#template${framework} ${name} --force`
         exec(cmd, (err: any, stdout: any, stderr: any) => {
