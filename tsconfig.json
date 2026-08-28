@@ -1,0 +1,14 @@
+{
+  "extends": "@nohejs/core/tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./view/*"],
+      "/view/*": ["./view/*"],
+      "@public/*": ["./public/*"]
+    }
+  },
+  "include": [
+    "view/**/*",
+    "public/**/*"
+  ]
+}

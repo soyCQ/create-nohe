@@ -1,1 +1,1 @@
-print("NoheJS is running on the server side")
+print( __("hello_world") )
