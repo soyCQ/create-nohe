@@ -5,6 +5,17 @@ import path from 'path'
 
 const Init = async () => {
     console.clear()
+    const userAgent = process.env.npm_config_user_agent || '';
+    let NPM = "npm"
+    if (userAgent.startsWith('pnpm')) {
+      NPM = "pnpm"
+    } else if (userAgent.startsWith('npm')) {
+      NPM = "npm"
+    } else if (userAgent.startsWith('yarn')) {
+      NPM = "yarn"
+    } else if (userAgent.startsWith('bun')) {
+      NPM = "bun"
+    }
 
     console.log(" ⚡ Welcome To NoheJS !")
     console.log()
@@ -37,8 +48,8 @@ const Init = async () => {
     console.log("👉 To get started:")
     console.log()
     console.log("cd", name.n)
-    console.log("npm install")
-    console.log("npm run dev")
+    console.log(NPM + " install")
+    console.log(NPM + " run dev")
     console.log()
     console.log("Happy coding!")
 }
