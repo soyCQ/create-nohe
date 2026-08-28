@@ -92,27 +92,26 @@ function CreateFramework(name: any, framework: any) {
 
 function CreatePackage(name:string, framework:any) {
     let dependencies = [
-        `"@nohejs/cli": "latest"`,
         `"@nohejs/core": "latest"`
     ]
     let devDependencies:string[] = []
     if (framework == "Vue3") {
-        devDependencies.push(`"@vitejs/plugin-vue": "^2.3.1"`)
+        devDependencies.push(`"@vitejs/plugin-vue": "latest"`)
 
-        dependencies.push(`"vue": "^3.5.13"`)
-        dependencies.push(`"pinia": "^2.3.0"`)
-        dependencies.push(`"vue-router": "^4.5.0"`)
+        dependencies.push(`"vue": "^3.5.42"`)
+        dependencies.push(`"pinia": "^4.0.3"`)
+        dependencies.push(`"vue-router": "^5.3.0"`)
     }
 
     if (framework == "Vue2") {
-        devDependencies.push(`"@vitejs/plugin-vue2": "^2.3.1"`)
+        devDependencies.push(`"@vitejs/plugin-vue2": "latest"`)
         
         dependencies.push(`"vue": "^2.7.0-0"`)
         dependencies.push(`"pinia": "^2.3.0"`)
         dependencies.push(`"vue-router": "^3.6.5"`)
     }
     if (framework == "React") {
-        devDependencies.push(`"@farmfe/plugin-react": "^1.2.6"`)
+        devDependencies.push(`"@vitejs/plugin-react": "latest"`)
         devDependencies.push(`"@types/react": "^19.0.8"`)
         devDependencies.push(`"@types/react-dom": "^19.0.3"`)
         devDependencies.push(`"react-refresh": "^0.16.0"`)
@@ -127,7 +126,7 @@ function CreatePackage(name:string, framework:any) {
 export default defineConfig({
     outputDir: './build'
 })`
-        fs.writeFile(path.join(name, 'nohe.config.js'), file, err => {
+        fs.writeFile(path.join(name, 'nohe.config.ts'), file, err => {
             if (err) throw err;
         })
     }
