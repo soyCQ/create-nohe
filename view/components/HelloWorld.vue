@@ -17,7 +17,7 @@
   <p class="read-the-docs">Click on the Nohejs and Vue logos to learn more</p>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useMain } from '@/store'
 const main = useMain()
 </script>

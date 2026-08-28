@@ -1,7 +1,7 @@
 <template>
   <div>
     <a href="/" target="_blank">
-      <img src="@/assets/nohe.png" class="logo Nohejs" alt="Nohejs logo" />
+      <img src="@/assets/nohe.webp" class="logo Nohejs" alt="Nohejs logo" />
     </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
@@ -11,9 +11,9 @@
   <router-view></router-view>
 </template>
 
-<script setup>
+<script setup lang="ts">
 
-</script>
+</script> 
 
 <style>
 :root {
