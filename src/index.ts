@@ -148,10 +148,10 @@ export default defineConfig({
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "node nohe start",
-    "build": "node nohe build",
-    "clean": "node nohe clean",
-    "config": "node nohe config"
+    "dev": "nohe start",
+    "build": "nohe build",
+    "clean": "nohe clean",
+    "config": "nohe config"
   },
   "author": "",
   "license": "ISC",
